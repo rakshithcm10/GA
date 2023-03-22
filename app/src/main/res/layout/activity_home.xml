@@ -7,32 +7,44 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="399dp"
-        android:layout_height="63dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="399dp"-->
+<!--        android:layout_height="63dp"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.001"-->
+<!--        app:tabIndicatorColor="#ff0000"-->
+<!--        app:tabIndicatorHeight="4dp"-->
+<!--        app:tabMode="fixed"-->
+<!--        app:tabTextColor="#0000ff" />-->
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="406dp"-->
+<!--        android:layout_height="602dp"-->
+<!--        android:contentDescription="@string/app_name"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />-->
+
+
+    <Button
+        android:id="@+id/btnretrofit"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
+        android:text="2.Retrofit"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001"
-        app:tabIndicatorColor="#ff0000"
-        app:tabIndicatorHeight="4dp"
-        app:tabMode="fixed"
-        app:tabTextColor="#0000ff" />
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="406dp"
-        android:layout_height="602dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
-
+        app:layout_constraintVertical_bias="0.153" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -42,5 +54,17 @@
         android:text="Logout"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnview"
+        android:layout_width="411dp"
+        android:layout_height="48dp"
+        android:text="1.ViewPager"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

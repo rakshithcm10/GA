@@ -52,7 +52,7 @@ public class OddFragment extends Fragment {
             while (cursor.moveToNext()) {
                 int position = cursor.getPosition();
                 if (position % 2 != 0) {
-                    name.add(cursor.getString(0));
+                    name.add(cursor.getString(3));
                     email.add(cursor.getString(1));
                     password.add(cursor.getString(2));
                 }

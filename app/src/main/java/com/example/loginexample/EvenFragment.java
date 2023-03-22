@@ -58,7 +58,7 @@ public class EvenFragment extends Fragment {
             int position = 0;
             while (cursor.moveToNext()) {
                 if (position % 2 == 0) {
-                    name.add(cursor.getString(0));
+                    name.add(cursor.getString(3));
                     email.add(cursor.getString(1));
                     password.add(cursor.getString(2));
                 }

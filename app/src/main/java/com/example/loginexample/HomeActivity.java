@@ -3,7 +3,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -33,19 +32,19 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        DB = new DBHelper(this);
-        name = new ArrayList<>();
-        email = new ArrayList<>();
-        password = new ArrayList<>();
-
-
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ViewPager viewPager = findViewById(R.id.viewPager);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TabLayout tabLayout = findViewById(R.id.tabLayout);
-        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
-        tabLayout.setupWithViewPager(viewPager);
-
-
-        displayData();
+//        DB = new DBHelper(this);
+//        name = new ArrayList<>();
+//        email = new ArrayList<>();
+//        password = new ArrayList<>();
+//
+//
+//        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ViewPager viewPager = findViewById(R.id.viewPager);
+//        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) TabLayout tabLayout = findViewById(R.id.tabLayout);
+//        viewPager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
+//        tabLayout.setupWithViewPager(viewPager);
+//
+//
+//        displayData();
 
 
         sharedPreferences = getSharedPreferences("my_preferences", MODE_PRIVATE);
@@ -56,21 +55,42 @@ public class HomeActivity extends AppCompatActivity {
                 logout();
             }
         });
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button viewpager=findViewById(R.id.btnview);
+        viewpager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ViewPager.class);
+                startActivity(intent);
+
+
+            }
+        });
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button retrofit=findViewById(R.id.btnretrofit);
+        retrofit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, RetrofitActivity.class);
+                startActivity(intent);
+
+
+            }
+        });
+
     }
 
-    private void displayData() {
-        Cursor cursor = DB.getData();
-        if (cursor.getCount() == 0) {
-            Toast.makeText(HomeActivity.this, "No entries exist", Toast.LENGTH_SHORT).show();
-            return;
-        } else {
-            while (cursor.moveToNext()) {
-                name.add(cursor.getString(0));
-                email.add(cursor.getString(1));
-                password.add(cursor.getString(2));
-            }
-        }
-    }
+//    private void displayData() {
+//        Cursor cursor = DB.getData();
+//        if (cursor.getCount() == 0) {
+//            Toast.makeText(HomeActivity.this, "No entries exist", Toast.LENGTH_SHORT).show();
+//            return;
+//        } else {
+//            while (cursor.moveToNext()) {
+//                name.add(cursor.getString(0));
+//                email.add(cursor.getString(1));
+//                password.add(cursor.getString(2));
+//            }
+//        }
+//    }
 
     private void logout() {
 
@@ -84,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
 
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
+    static class ViewPagerAdapter extends FragmentPagerAdapter {
 
         public ViewPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
